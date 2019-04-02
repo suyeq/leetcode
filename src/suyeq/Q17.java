@@ -15,6 +15,11 @@ public class Q17 {
         System.out.println(letterCombinations("234"));
     }
 
+    /**
+     * 深搜递归遍历
+     * @param digits
+     * @return
+     */
     public static List<String> letterCombinations(String digits) {
         List<String>list=new ArrayList<>();
         String []s=new String[digits.length()];
