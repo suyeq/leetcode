@@ -8,6 +8,34 @@ package suyeq;
  * @time: 10:33
  */
 public class Q3 {
+
+    public static void main(String[] args){
+        String a="";
+        System.out.println(lengthOfLongestSubstring(a));
+        System.out.println("djjsijfidsjh");
+    }
+
+
+    /**
+     *滑动窗口法
+     * @param s
+     * @return
+     */
+    public static int lengthOfLongestSubstring(String s) {
+        int start=0;
+        int end=-1;
+        int maxLength=0;
+        int []free=new int[256];
+        while (start < s.length()){
+            if (end+1 < s.length() && free[s.charAt(end+1)] == 0){
+                free[s.charAt(++end)]++;
+            }else {
+                free[s.charAt(start++)]--;
+            }
+            maxLength=Math.max(maxLength,end-start+1);
+        }
+        return maxLength;
+    }
 //    class Solution {
 //        public:
 //        int lengthOfLongestSubstring(string s) {
